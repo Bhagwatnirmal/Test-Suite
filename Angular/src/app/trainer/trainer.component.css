@@ -1,0 +1,121 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.trainer-interface {
+  width: 50%;
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trainer-interface:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.trainer-interface h1 {
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.trainer-interface h2 {
+  color: #666;
+  font-size: 1.2em;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.trainer-interface p {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.logout-btn {
+  background: linear-gradient(45deg, #ff6b6b, #d32f2f);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(45deg, #d32f2f, #ff6b6b);
+  transform: translateY(-2px);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+.button-container button:hover {
+  background: linear-gradient(45deg, #0056b3, #007bff);
+  transform: translateY(-3px);
+}
+
+.button-container button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.app-content {
+  margin-top: 20px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  background-color: #fafafa;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.app-content-active {
+  opacity: 1;
+}
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

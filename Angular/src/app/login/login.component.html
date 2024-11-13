@@ -1,0 +1,25 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<div class="background">
+  <form>
+    <h3><i class="fas fa-user-lock"></i> Secure Login</h3>
+    <div>
+      <label for="username"><i class="fas fa-user-circle"></i> Username:</label>
+      <input type="text" [(ngModel)]="username" name="username" placeholder="Enter your username"> 
+    </div>
+    <div>
+      <label for="password"><i class="fas fa-key"></i> Password:</label>
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Enter your password"> 
+    </div>
+    <button type="button" (click)="login()"><i class="fas fa-sign-in-alt"></i> Log In</button>
+  </form>
+
+  <div class="info-panel">
+    <h2><i class="fas fa-rocket"></i> Welcome to the <br> Written Test Application</h2>
+    <p><i class="fas fa-graduation-cap"></i> Prepare for various tests, track your learning, and grow your knowledge effortlessly. <br> Start your journey now! 🌟</p>
+    <p class="subtext"><i class="fas fa-cogs"></i> Easy to use. <i class="fas fa-check-circle"></i> Efficient. <i class="fas fa-trophy"></i> Rewarding.</p>
+  </div>
+</div>

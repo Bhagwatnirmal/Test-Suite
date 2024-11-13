@@ -1,0 +1,47 @@
+<head>
+    <!-- Other head content -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<div class="question-management-container">
+    <div class="header">
+        <h2><i class="fa fa-cogs"></i> Question Management</h2>
+        <p><i class="fa fa-info-circle"></i> Manage the questions for your written test. You can add, view, or delete questions as needed.</p>
+    </div>
+    
+    <button class="load-btn" (click)="load()"><i class="fa fa-sync"></i> Load Questions</button>
+    
+    <table class="question-table">
+        <thead>
+            <tr>
+                <th>SN</th>
+                <th>Question Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let obj of questions; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{obj.name}}</td>
+                <td>
+                    <button class="delete-btn" (click)="delete(obj)">
+                        <i class="fa fa-trash"></i> Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="add-question">
+        <h3><i class="fa fa-plus-circle"></i> Add New Question</h3>
+        <label for="name">Question Name:</label>
+        <input type="text" id="name" [(ngModel)]="name" placeholder="Enter the question name here..."><br>
+        <button class="add-btn" (click)="add()">
+            <i class="fa fa-check"></i> Add Question
+        </button>
+    </div>
+
+    <div class="info-box">
+        <p><i class="fa fa-lightbulb-o"></i> Tips: Ensure that the question names are clear. You can delete any unwanted questions by clicking the "Delete" button next to the question. To add a new question, enter the name in the input box and press the "Add Question" button.</p>
+    </div>
+</div>

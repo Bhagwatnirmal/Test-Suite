@@ -1,0 +1,154 @@
+.interface-container {
+    display: flex;
+    flex-direction: column;  /* Stack sections vertically */
+    justify-content: flex-start;  /* Align items at the top */
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes full height */
+    height: 100%; /* Make sure the container takes the full height of the viewport */
+    background-color: #f4f7f9; /* Light background for a clean look */
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Ensure each section occupies more space */
+.auth-section, .student-section, .trainer-section {
+    width: 100%;
+    max-width: 100%; /* Make sections span full width */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Specific styles for each section */
+.auth-section {
+    background-color: #eaf7e3;
+    border: 2px solid #80c440;
+}
+
+.student-section {
+    background-color: #e3f7ff;
+    border: 2px solid #50b0f4;
+}
+
+.trainer-section {
+    background-color: #fff4e1;
+    border: 2px solid #ffcd00;
+}
+
+/* Heading Styling */
+h1 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+/* Styling for Buttons */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+    .interface-container {
+        padding: 15px;
+    }
+
+    .auth-section, .student-section, .trainer-section {
+        width: 90%; /* Ensure sections take up more space on smaller screens */
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 8px 18px;
+    }
+}
+
+/* Mobile responsiveness (screens smaller than 600px) */
+@media (max-width: 600px) {
+    .auth-section, .student-section, .trainer-section {
+        width: 100%; /* Take full width on mobile */
+        padding: 15px; /* Reduce padding */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Smaller font size */
+    }
+
+    button {
+        font-size: 0.85em;
+        padding: 6px 15px; /* Smaller button padding */
+    }
+}
+
+/* Styling for Tables in Student Section */
+.student-section table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;  /* Allow horizontal scroll */
+}
+
+.student-section th, .student-section td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.student-section th {
+    background-color: #50b0f4;
+    color: white;
+}
+
+.student-section tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.student-section button {
+    background-color: #4caf50;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.student-section button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .student-section table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .student-section th, .student-section td {
+        padding: 8px;
+    }
+}

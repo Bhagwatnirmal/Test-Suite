@@ -1,0 +1,167 @@
+/* Full-screen background with centered content */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e1e2f, #3b3b5e);
+  overflow: hidden;
+  margin: 0;
+  padding: 20px;
+  gap: 60px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Form styling */
+form {
+  height: 420px;
+  width: 380px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1.5s ease;
+  transition: transform 0.3s ease;
+}
+
+form:hover {
+  transform: scale(1.05);
+}
+
+form h3 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #fff;
+  text-align: center;
+}
+
+form label {
+  font-size: 14px;
+  color: #ddd;
+  margin-top: 15px;
+}
+
+form input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+form input:focus {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+form input::placeholder {
+  color: #ccc;
+}
+
+form button {
+  margin-top: 20px;
+  width: 100%;
+  background: #fcf8f8;
+  color: #080710;
+  padding: 14px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+form button:hover {
+  background-color: #f1ecec;
+  transform: scale(1.1);
+}
+
+/* Right-side information panel */
+.info-panel {
+  max-width: 450px;
+  text-align: left;
+  padding: 30px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  animation: slideIn 1.5s ease;
+}
+
+.info-panel h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fcfcfc;
+}
+
+.info-panel p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fcfcfc;
+  margin-bottom: 20px;
+}
+
+.info-panel .subtext {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.info-panel a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.info-panel a:hover {
+  color: #f1f1f1;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .background {
+    flex-direction: column;
+    gap: 40px;
+    padding: 15px;
+  }
+
+  .info-panel {
+    max-width: 100%;
+    padding: 25px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  form h3 {
+    font-size: 22px;
+  }
+}

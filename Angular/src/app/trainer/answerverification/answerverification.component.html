@@ -1,0 +1,48 @@
+<head>
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  
+  <div class="answer-verification">
+    <div class="header-section">
+      <h2>Answer Verification <span class="icon"><i class="fas fa-pen"></i></span></h2>
+      <p>Below you can review the answers submitted by students. You can accept or reject the answers based on your evaluation.</p>
+    </div>
+  
+    <div class="instructions">
+      <p><strong>Instructions:</strong></p>
+      <ul>
+        <li><span class="icon"><i class="fas fa-check-circle"></i></span> Click <strong>Accept</strong> if the answer is correct.</li>
+        <li><span class="icon"><i class="fas fa-times-circle"></i></span> Click <strong>Reject</strong> if the answer is incorrect or incomplete.</li>
+      </ul>
+    </div>
+  
+    <table class="answer-table">
+      <thead>
+        <tr>
+          <th>SN</th>
+          <th>Question</th>
+          <th>Answer</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let log of logs; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ log.question.name }}</td>
+          <td>
+            <textarea rows="5" [(ngModel)]="log.answer" placeholder="Enter feedback if needed..."></textarea>
+          </td>
+          <td>
+            <button class="accept-btn" (click)="acceptreject(log, 1)">
+              <span class="icon"><i class="fas fa-check-circle"></i></span> Accept
+            </button>
+            <button class="reject-btn" (click)="acceptreject(log, -1)">
+              <span class="icon"><i class="fas fa-times-circle"></i></span> Reject
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

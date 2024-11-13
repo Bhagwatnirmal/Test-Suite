@@ -1,0 +1,36 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  
+  <div class="container">
+    <div class="trainer-interface">
+      <h1><i class="fa fa-chalkboard-teacher"></i> Welcome, Trainer</h1>
+      <h2><i class="fa fa-tasks"></i> Manage your test settings with ease</h2>
+      <p><i class="fa fa-info-circle"></i> Use the buttons below to navigate through different management options.</p>
+  
+      <button class="logout-btn" (click)="logout()">
+        <i class="fa fa-sign-out-alt"></i> Log Out
+      </button><br><br>
+  
+      <div class="button-container">
+        <button [disabled]="whatToShow==1" (click)="changeWhatToShow(1)">
+          <i class="fa fa-cogs"></i> Test Management
+        </button>
+        <button [disabled]="whatToShow==2" (click)="changeWhatToShow(2)">
+          <i class="fa fa-question-circle"></i> Question Management
+        </button>
+        <button [disabled]="whatToShow==3" (click)="changeWhatToShow(3)">
+          <i class="fa fa-check-circle"></i> Answer Verification
+        </button>
+        <button [disabled]="whatToShow==4" (click)="changeWhatToShow(4)">
+          <i class="fa fa-user-plus"></i> Student Registration
+        </button>
+      </div>
+  
+      <div *ngIf="whatToShow==1"><app-testmgmt></app-testmgmt></div>
+      <div *ngIf="whatToShow==2"><app-questionmgmt></app-questionmgmt></div>
+      <div *ngIf="whatToShow==3"><app-answerverification></app-answerverification></div>
+      <div *ngIf="whatToShow==4"><app-registration></app-registration></div>
+    </div>
+  </div>
+  

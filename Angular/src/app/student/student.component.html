@@ -1,0 +1,24 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<div class="interface-container">
+    <!-- Combined Box for Welcome and Conditional Sections -->
+    <div class="combined-box">
+      <!-- Welcome Section -->
+      <div class="welcome-section">
+        <h1><i class="fas fa-check-circle"></i> Welcome to Written Test Application</h1>
+        <p><i class="fas fa-laptop"></i> Your go-to platform for managing and attempting written tests.</p>
+        <p><i class="fas fa-thumbs-up"></i> All the best...!</p>
+        <button class="logout-btn" (click)="logout()"><i class="fas fa-sign-out-alt"></i> LogOut</button>
+      </div>
+  
+      <!-- Conditional Display of Components -->
+      <div *ngIf="whatToShow == 1" class="test-section">
+        <app-showtest></app-showtest>
+      </div>
+  
+      <div *ngIf="whatToShow == 2" class="test-section">
+        <app-attempttest></app-attempttest>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+<head>
+  <!-- Link to Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<form #form="ngForm" (ngSubmit)="register(form)" class="form-container">
+  <h2 class="form-title">Register new Student</h2>
+  
+
+  <!-- Name Field -->
+  <div class="form-group">
+    <label for="name" class="form-label">
+      <i class="fas fa-user"></i> Name:
+    </label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      [(ngModel)]="name"
+      #nameField="ngModel"
+      required
+      minlength="3"
+      (blur)="nameField.control.markAsTouched()"
+      class="form-input"
+      placeholder="Enter Student full name"
+    />
+    <div *ngIf="nameField.invalid && nameField.touched" class="error-messages">
+      <small *ngIf="nameField.errors?.['required']" class="error-message">Name is required.</small>
+      <small *ngIf="nameField.errors?.['minlength']" class="error-message">
+        Name must be longer than 2 characters.
+      </small>
+    </div>
+  </div>
+
+  <!-- Username Field -->
+  <div class="form-group">
+    <label for="username" class="form-label">
+      <i class="fas fa-user-circle"></i> Username:
+    </label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      [(ngModel)]="username"
+      #usernameField="ngModel"
+      required
+      minlength="6"
+      pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+      (blur)="usernameField.control.markAsTouched()"
+      class="form-input"
+      placeholder="Choose a username (min 6 characters)"
+    />
+    <div *ngIf="usernameField.invalid && usernameField.touched" class="error-messages">
+      <small *ngIf="usernameField.errors?.['required']" class="error-message">Username is required.</small>
+      <small *ngIf="usernameField.errors?.['minlength']" class="error-message">
+        Username must be longer than 5 characters.
+      </small>
+      <small *ngIf="usernameField.errors?.['pattern']" class="error-message">
+        Username must contain at least one letter, one number, and no special characters.
+      </small>
+    </div>
+  </div>
+
+  <!-- Password Field -->
+  <div class="form-group">
+    <label for="password" class="form-label">
+      <i class="fas fa-lock"></i> Password:
+    </label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      [(ngModel)]="password"
+      #passwordField="ngModel"
+      required
+      minlength="8"
+      maxlength="12"
+      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$"
+      (blur)="passwordField.control.markAsTouched()"
+      class="form-input"
+      placeholder="Enter a secure password"
+    />
+    <div *ngIf="passwordField.invalid && passwordField.touched" class="error-messages">
+      <small *ngIf="passwordField.errors?.['required']" class="error-message">Password is required.</small>
+      <small *ngIf="passwordField.errors?.['minlength']" class="error-message">
+        Password must be at least 8 characters long.
+      </small>
+      <small *ngIf="passwordField.errors?.['maxlength']" class="error-message">
+        Password must be less than 12 characters long.
+      </small>
+      <small *ngIf="passwordField.errors?.['pattern']" class="error-message">
+        Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.
+      </small>
+    </div>
+  </div>
+
+  <!-- Register Button -->
+  <button type="submit" [disabled]="form.invalid" class="submit-btn">
+    <i class="fas fa-check"></i> Register
+  </button>
+</form>

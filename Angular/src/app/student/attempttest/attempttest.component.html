@@ -1,0 +1,58 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  
+  <button (click)="back()" class="back-btn">
+    <i class="fa fa-arrow-left"></i> Back
+  </button>
+  
+  <table class="main-table" border="1">
+    <tr>
+      <td>
+        <table class="nested-table" border="2">
+          <tr>
+            <th><i class="fa fa-hashtag"></i> SN</th>
+            <th><i class="fa fa-question-circle"></i> Question</th>
+            <th><i class="fa fa-cogs"></i> Action</th>
+          </tr>
+          <tr *ngFor="let log of student.logs; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{log.question.name}}</td>
+            <td>
+              <div *ngIf="log.submit==0">
+                <button (click)="load(i)" class="load-btn">
+                  <i class="fa fa-upload"></i> Load
+                </button>
+              </div>
+              <div *ngIf="log.submit==1">
+                <span class="submitted"><i class="fa fa-check-circle"></i> Submitted</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td align="top">
+        <h3><i class="fa fa-pencil-alt"></i> Write Answer</h3>
+        <div *ngIf="showIndex<0">
+          <i class="fa fa-exclamation-circle"></i> Question Not Selected
+        </div>
+        <div *ngIf="showIndex>=0">
+          <p><i class="fa fa-question-circle"></i> Question: {{student.logs[showIndex].question.name}}</p>
+          <p><i class="fa fa-pencil-alt"></i> Answer:</p>
+          <textarea cols="50" rows="10" [(ngModel)]="student.logs[showIndex].answer" (ngModelChange)="validateText($event)"></textarea>
+          <br>
+          <button (click)="update()" class="update-btn">
+            <i class="fa fa-sync"></i> Update
+          </button>
+          <button (click)="submit()" [disabled]="charCount < 400" class="submit-btn">
+            <i class="fa fa-paper-plane"></i> Submit
+          </button>
+          <br>
+          <span><i class="fa fa-info-circle"></i> Current character count: {{charCount}}</span>
+          <br>
+          <span><i class="fa fa-info-circle"></i> Your answer must be at least 400 characters before submission.</span>
+        </div>
+      </td>
+    </tr>
+  </table>
+  

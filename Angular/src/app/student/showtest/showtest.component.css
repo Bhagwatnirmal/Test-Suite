@@ -1,0 +1,103 @@
+/* General container for the show test section */
+.show-test-container {
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+th i, td i {
+  margin-right: 8px; /* Adds spacing between the icon and the text */
+  vertical-align: middle; /* Aligns the icon with the text */
+}
+
+button i {
+  margin-right: 6px; /* Adds space between the icon and the button text */
+  vertical-align: middle; /* Aligns the icon with the button text */
+}
+
+/* Heading Styling */
+.heading {
+  text-align: center;
+  font-size: 2.5em;
+  color: #2e3b4e;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Description Text Styling */
+.description {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Table Styling */
+.test-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.test-table th, .test-table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.test-table th {
+  background-color: #4caf50;
+  color: white;
+  font-size: 1.1em;
+}
+
+.test-table td {
+  background-color: #ffffff;
+  color: #333;
+  font-size: 1em;
+}
+
+.test-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.test-table tr:hover {
+  background-color: #d0f0c0;
+}
+
+/* Button Styling for "Attempt" */
+.attempt-btn {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.attempt-btn:hover {
+  background-color: #45a049;
+}
+
+.attempt-btn:focus {
+  outline: none;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .test-table th, .test-table td {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  .show-test-container {
+    width: 95%;
+    padding: 15px;
+  }
+}

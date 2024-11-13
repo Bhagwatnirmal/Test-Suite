@@ -1,0 +1,37 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<div class="show-test-container">
+  <h1 class="heading"><i class="fa fa-clipboard-list"></i> Available Tests</h1>
+  <p class="description"><i class="fa fa-info-circle"></i> As a student, you can view and attempt tests. Below are the details of the tests available to you. Click on "Attempt" to begin a test.</p>
+
+  <table class="test-table">
+    <thead>
+      <tr>
+        <th><i class="fa fa-sort-numeric-up"></i> SN</th>
+        <th><i class="fa fa-pen-square"></i> Name</th>
+        <th><i class="fa fa-clock"></i> Start</th>
+        <th><i class="fa fa-stopwatch"></i> End</th>
+        <th><i class="fa fa-puzzle-piece"></i> Question Count</th>
+        <th><i class="fa fa-trophy"></i> Passing Count</th>
+        <th><i class="fa fa-bolt"></i> Attempt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let obj of tests; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ obj.name }}</td>
+        <td>{{ obj.start | date }}</td>
+        <td>{{ obj.end | date }}</td>
+        <td>{{ obj.questionCount }}</td>
+        <td>{{ obj.passingCount }}</td>
+        <td>
+          <button class="attempt-btn" (click)="attempt(obj.id)">
+            <i class="fa fa-rocket"></i> Attempt
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

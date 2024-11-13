@@ -1,0 +1,177 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fafafa; /* Light background */
+  color: #333333; /* Dark text for readability */
+  margin: 0;
+  padding: 0;
+}
+
+/* Centering the content */
+.answer-verification {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  background-color: #ffffff; /* White background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.header-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-section h2 {
+  color: #2196f3; /* Blue color for the header */
+  font-size: 2rem;
+}
+
+.header-section .icon {
+  font-size: 1.4rem;
+  color: #2196f3;
+}
+
+/* Instructions Section */
+.instructions {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #e3f2fd; /* Light blue background for instructions */
+  border-left: 5px solid #2196f3; /* Accent blue border */
+}
+
+.instructions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.instructions li {
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+.instructions li .icon {
+  margin-right: 10px;
+  font-size: 1.4rem;
+  color: #2196f3;
+}
+
+/* Table Styles */
+.answer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.answer-table th,
+.answer-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #e0e0e0; /* Light gray border */
+}
+
+.answer-table th {
+  background-color: #2196f3; /* Blue header background */
+  color: white;
+}
+
+.answer-table tr:nth-child(even) {
+  background-color: #f1f8e9; /* Light green for even rows */
+}
+
+/* Fixing the Answer Section Textarea Width */
+.answer-table td textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #e0e0e0; /* Light gray border */
+  border-radius: 4px;
+  resize: vertical;
+  background-color: #ffffff; /* White background */
+  color: #333333; /* Dark text for readability */
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Prevent the blur effect and keep clarity */
+.answer-table td textarea:focus {
+  outline: none;
+  border-color: #2196f3; /* Accent blue border on focus */
+  background-color: #f9f9f9; /* Slightly gray background on focus */
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.3); /* Blue glow */
+}
+
+/* Action Buttons */
+.accept-btn,
+.reject-btn {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.accept-btn {
+  background-color: #4caf50; /* Green button */
+  color: white;
+}
+
+.reject-btn {
+  background-color: #f44336; /* Red button */
+  color: white;
+}
+
+.accept-btn:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+.reject-btn:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.accept-btn .icon,
+.reject-btn .icon {
+  margin-right: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .answer-verification {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .header-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .answer-table th,
+  .answer-table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .answer-table td textarea {
+    width: 100%;
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  .accept-btn,
+  .reject-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .instructions li {
+    font-size: 1rem;
+  }
+}

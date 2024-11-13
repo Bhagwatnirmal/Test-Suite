@@ -1,0 +1,158 @@
+/* General Body Styling */
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e4f0f5; /* Subtle light blue background for a clean look */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Centering the interface container */
+.interface-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Combined box for both welcome and test sections */
+.combined-box {
+  background: linear-gradient(145deg, #ffffff, #f2f2f2); /* Subtle gradient for depth */
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+  padding: 40px;
+  width: 100%;
+  max-width: 1000px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for the combined box */
+.combined-box:hover {
+  transform: translateY(-7px); /* Slight lift effect */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1); /* Increased shadow for hover */
+}
+
+/* Welcome section styling */
+.welcome-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.welcome-section h1 {
+  font-weight: bold;
+    font-size: 2em; /* Adjusted font size */
+    color: #333;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Light text shadow */
+    margin-bottom: 20px;
+}
+
+.welcome-section p {
+  font-size: 1.1rem;
+  color: #7a7a7a; /* Softer grey for text */
+  margin-bottom: 25px;
+  line-height: 1.6; /* Improve line spacing for readability */
+}
+
+.welcome-section .logout-btn {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #4CAF50; /* Green button for positive action */
+  border: none;
+  border-radius: 30px; /* Fully rounded button */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  text-transform: uppercase; /* Uppercase text on button */
+  letter-spacing: 1px; /* Letter spacing to match modern design */
+}
+
+/* Logout button hover effect */
+.welcome-section .logout-btn:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 10px 20px rgba(72, 202, 128, 0.3); /* Shadow to enhance hover effect */
+}
+
+/* Test section container */
+.test-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.test-section app-showtest,
+.test-section app-attempttest {
+  display: block;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow around the test components */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  transform: translateY(0);
+}
+
+/* Hover effect on test sections */
+.test-section app-showtest:hover,
+.test-section app-attempttest:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  transform: translateY(-5px); /* Lift effect */
+}
+
+/* Animation for smooth fade-in effect */
+.combined-box {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) 
+{
+  .combined-box {
+    padding: 25px;
+    width: 100%;
+  }
+
+  .welcome-section p {
+    font-size: 1rem;
+  }
+
+  .welcome-section .logout-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .test-section app-showtest,
+  .test-section app-attempttest {
+    padding: 20px;
+  }
+}
+@media (max-width: 1024px) 
+{
+  .welcome-section h1 
+  {
+      
+    font-size: 1.8em; /* Slightly smaller font size on medium screens */
+
+  }
+}
+@media (max-width: 600px) {
+  .welcome-section h1 {
+      font-size: 1.5em; /* Smaller font size for mobile screens */
+  }
+}

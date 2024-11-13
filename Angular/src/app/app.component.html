@@ -1,0 +1,16 @@
+<div class="interface-container">
+  <!-- Login Section (when not logged in) -->
+  <div *ngIf="isLoggedIn == 0" class="auth-section">
+    <app-login></app-login>
+  </div>
+  
+  <!-- Student Section (when logged in as a student) -->
+  <div *ngIf="isLoggedIn == 1" class="student-section">
+    <app-student></app-student>
+  </div>
+  
+  <!-- Trainer Section (when logged in as a trainer) -->
+  <div *ngIf="isLoggedIn == 2" class="trainer-section">
+    <app-trainer></app-trainer>
+  </div>
+</div>
